@@ -1,12 +1,17 @@
-name: Hello Agile
+#this is a test change for dev
+ name: Hello Agile
 
-on: [push]
+on:
+  push:
+    branches: [ dev ]      
+  pull_request:
+    branches: [ main ]      
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
+
     steps:
       - name: Print Hello
-        run: echo "Hello from GitHub Actions!"
-
+        run: echo "Hello from GitHub Actions triggered by ${{ github.event_name }}!"
 
