@@ -1,11 +1,10 @@
-#this is a test change for dev
- name: Hello Agile
+name: Hello Agile
 
 on:
   push:
-    branches: [ dev ]      
+    branches: [dev]       # Runs only when pushing to 'dev' branch
   pull_request:
-    branches: [ main ]      
+    branches: [main]      # Runs when a PR targets 'main'
 
 jobs:
   say_hello:
