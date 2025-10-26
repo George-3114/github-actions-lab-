@@ -1,6 +1,8 @@
 name: Action Basics Demo
 
-on: [push]
+on:
+  push:
+    branches: [ dev ]   # يشتغل على كل push على فرع dev
 
 jobs:
   build:
@@ -13,7 +15,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'  # Input passed to the action
+          python-version: '3.10'
 
       - name: Run Python Commands
         run: |
